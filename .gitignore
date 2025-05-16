@@ -1,0 +1,22 @@
+# Data
+data/
+!data/.gitkeep
+
+# MLflow runs
+mlruns/
+!mlruns/.gitkeep
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+.env
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+
+# Other
+.DS_Store
+Thumbs.db
