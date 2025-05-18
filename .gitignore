@@ -1,6 +1,8 @@
 # Data
 data/
 !data/.gitkeep
+data/processed/*.pkl
+!data/processed/.gitkeep
 
 # MLflow runs
 mlruns/
