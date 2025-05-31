@@ -7526,7 +7526,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -7542,12 +7542,12 @@ a.anchor-link {
 <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.combine</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMOTETomek</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMOTE</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.optimizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Adam</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.regularizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">l2</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequential</span><span class="p">,</span> <span class="n">Input</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.optimizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Adam</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.regularizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">l2</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequential</span><span class="p">,</span> <span class="n">Input</span> <span class="c1"># type: ignore</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">EarlyStopping</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">BatchNormalization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">EarlyStopping</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">BatchNormalization</span> <span class="c1"># type: ignore</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">train_test_split</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">average_precision_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span>
 </pre></div>
@@ -7617,7 +7617,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>2025/05/27 14:19:06 INFO mlflow.tracking.fluent: Experiment with name 'Credit Card Fraud Detection Model Evaluation' does not exist. Creating a new experiment.
+<pre>2025/05/30 00:16:01 INFO mlflow.tracking.fluent: Experiment with name 'Credit Card Fraud Detection Model Evaluation' does not exist. Creating a new experiment.
 </pre>
 </div>
 </div>
@@ -7711,8 +7711,8 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Cross Validation Results of Random Forest:
-fit_time: 84.9409
-score_time: 0.3524
+fit_time: 72.8908
+score_time: 0.3331
 test_roc_auc: 0.9504
 test_f1: 0.8315
 test_average_precision: 0.8403
@@ -7848,8 +7848,8 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Cross Validation Results of Random Forest with SMOTE:
-fit_time: 273.5549
-score_time: 0.5913
+fit_time: 228.4841
+score_time: 0.5197
 test_roc_auc: 0.9764
 test_f1: 0.8371
 test_average_precision: 0.8397
@@ -7985,8 +7985,8 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Cross Validation Results of XGBoost:
-fit_time: 1.3233
-score_time: 0.0819
+fit_time: 1.5467
+score_time: 0.1087
 test_roc_auc: 0.9789
 test_f1: 0.8516
 test_average_precision: 0.8433
@@ -8122,8 +8122,8 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Cross Validation Results of XGBoost with SMOTE:
-fit_time: 2.4842
-score_time: 0.0852
+fit_time: 2.6589
+score_time: 0.0973
 test_roc_auc: 0.9781
 test_f1: 0.7977
 test_average_precision: 0.8468
@@ -8269,59 +8269,59 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Epoch 1/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">4s</span> 5ms/step - AUC: 0.7500 - Precision: 0.0054 - Recall: 0.6748 - loss: 0.5585 - val_AUC: 0.8621 - val_Precision: 0.8667 - val_Recall: 0.7831 - val_loss: 0.0464
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">4s</span> 3ms/step - AUC: 0.7500 - Precision: 0.0054 - Recall: 0.6748 - loss: 0.5585 - val_AUC: 0.8621 - val_Precision: 0.8667 - val_Recall: 0.7831 - val_loss: 0.0464
 Epoch 2/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.8087 - Precision: 0.3938 - Recall: 0.5551 - loss: 0.0427 - val_AUC: 0.9026 - val_Precision: 0.8806 - val_Recall: 0.7108 - val_loss: 0.0117
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.8087 - Precision: 0.3938 - Recall: 0.5551 - loss: 0.0427 - val_AUC: 0.9026 - val_Precision: 0.8806 - val_Recall: 0.7108 - val_loss: 0.0117
 Epoch 3/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.8977 - Precision: 0.7088 - Recall: 0.6286 - loss: 0.0137 - val_AUC: 0.9316 - val_Precision: 0.8784 - val_Recall: 0.7831 - val_loss: 0.0072
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.8977 - Precision: 0.7088 - Recall: 0.6286 - loss: 0.0137 - val_AUC: 0.9316 - val_Precision: 0.8784 - val_Recall: 0.7831 - val_loss: 0.0072
 Epoch 4/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9120 - Precision: 0.7793 - Recall: 0.6445 - loss: 0.0084 - val_AUC: 0.9271 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0053
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9120 - Precision: 0.7793 - Recall: 0.6445 - loss: 0.0084 - val_AUC: 0.9271 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0053
 Epoch 5/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9060 - Precision: 0.8203 - Recall: 0.6640 - loss: 0.0063 - val_AUC: 0.9213 - val_Precision: 0.8971 - val_Recall: 0.7349 - val_loss: 0.0048
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9060 - Precision: 0.8203 - Recall: 0.6640 - loss: 0.0063 - val_AUC: 0.9213 - val_Precision: 0.8971 - val_Recall: 0.7349 - val_loss: 0.0048
 Epoch 6/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9128 - Precision: 0.8497 - Recall: 0.6468 - loss: 0.0057 - val_AUC: 0.9273 - val_Precision: 0.8971 - val_Recall: 0.7349 - val_loss: 0.0046
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9128 - Precision: 0.8497 - Recall: 0.6468 - loss: 0.0057 - val_AUC: 0.9273 - val_Precision: 0.8971 - val_Recall: 0.7349 - val_loss: 0.0046
 Epoch 7/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9311 - Precision: 0.8425 - Recall: 0.6357 - loss: 0.0052 - val_AUC: 0.9273 - val_Precision: 0.9091 - val_Recall: 0.7229 - val_loss: 0.0047
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9311 - Precision: 0.8425 - Recall: 0.6357 - loss: 0.0052 - val_AUC: 0.9273 - val_Precision: 0.9091 - val_Recall: 0.7229 - val_loss: 0.0047
 Epoch 8/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 4ms/step - AUC: 0.9344 - Precision: 0.8812 - Recall: 0.6850 - loss: 0.0044 - val_AUC: 0.9272 - val_Precision: 0.9048 - val_Recall: 0.6867 - val_loss: 0.0041
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9344 - Precision: 0.8812 - Recall: 0.6850 - loss: 0.0044 - val_AUC: 0.9272 - val_Precision: 0.9048 - val_Recall: 0.6867 - val_loss: 0.0041
 Epoch 9/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9461 - Precision: 0.8561 - Recall: 0.6758 - loss: 0.0043 - val_AUC: 0.9274 - val_Precision: 0.9062 - val_Recall: 0.6988 - val_loss: 0.0040
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9461 - Precision: 0.8561 - Recall: 0.6758 - loss: 0.0043 - val_AUC: 0.9274 - val_Precision: 0.9062 - val_Recall: 0.6988 - val_loss: 0.0040
 Epoch 10/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9567 - Precision: 0.8920 - Recall: 0.6981 - loss: 0.0036 - val_AUC: 0.9332 - val_Precision: 0.8696 - val_Recall: 0.7229 - val_loss: 0.0039
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9567 - Precision: 0.8920 - Recall: 0.6981 - loss: 0.0036 - val_AUC: 0.9332 - val_Precision: 0.8696 - val_Recall: 0.7229 - val_loss: 0.0039
 Epoch 11/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9509 - Precision: 0.8920 - Recall: 0.6655 - loss: 0.0038 - val_AUC: 0.9333 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0037
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9509 - Precision: 0.8920 - Recall: 0.6655 - loss: 0.0038 - val_AUC: 0.9333 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0037
 Epoch 12/100
 <span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9546 - Precision: 0.8676 - Recall: 0.6813 - loss: 0.0035 - val_AUC: 0.9333 - val_Precision: 0.9091 - val_Recall: 0.7229 - val_loss: 0.0037
 Epoch 13/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9664 - Precision: 0.8728 - Recall: 0.7027 - loss: 0.0034 - val_AUC: 0.9332 - val_Precision: 0.9091 - val_Recall: 0.7229 - val_loss: 0.0037
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9664 - Precision: 0.8728 - Recall: 0.7027 - loss: 0.0034 - val_AUC: 0.9332 - val_Precision: 0.9091 - val_Recall: 0.7229 - val_loss: 0.0037
 Epoch 14/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9588 - Precision: 0.8702 - Recall: 0.7073 - loss: 0.0032 - val_AUC: 0.9332 - val_Precision: 0.9344 - val_Recall: 0.6867 - val_loss: 0.0035
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9588 - Precision: 0.8702 - Recall: 0.7073 - loss: 0.0032 - val_AUC: 0.9332 - val_Precision: 0.9344 - val_Recall: 0.6867 - val_loss: 0.0035
 Epoch 15/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9669 - Precision: 0.8747 - Recall: 0.6664 - loss: 0.0030 - val_AUC: 0.9332 - val_Precision: 0.9242 - val_Recall: 0.7349 - val_loss: 0.0036
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9669 - Precision: 0.8747 - Recall: 0.6664 - loss: 0.0030 - val_AUC: 0.9332 - val_Precision: 0.9242 - val_Recall: 0.7349 - val_loss: 0.0036
 Epoch 16/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 4ms/step - AUC: 0.9739 - Precision: 0.8998 - Recall: 0.7127 - loss: 0.0030 - val_AUC: 0.9332 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0037
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9739 - Precision: 0.8998 - Recall: 0.7127 - loss: 0.0030 - val_AUC: 0.9332 - val_Precision: 0.8955 - val_Recall: 0.7229 - val_loss: 0.0037
 Epoch 17/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9740 - Precision: 0.8981 - Recall: 0.6856 - loss: 0.0029 - val_AUC: 0.9392 - val_Precision: 0.9242 - val_Recall: 0.7349 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9740 - Precision: 0.8981 - Recall: 0.6856 - loss: 0.0029 - val_AUC: 0.9392 - val_Precision: 0.9242 - val_Recall: 0.7349 - val_loss: 0.0034
 Epoch 18/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9790 - Precision: 0.9048 - Recall: 0.6839 - loss: 0.0027 - val_AUC: 0.9391 - val_Precision: 0.9254 - val_Recall: 0.7470 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9790 - Precision: 0.9048 - Recall: 0.6839 - loss: 0.0027 - val_AUC: 0.9391 - val_Precision: 0.9254 - val_Recall: 0.7470 - val_loss: 0.0034
 Epoch 19/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9731 - Precision: 0.9214 - Recall: 0.7206 - loss: 0.0024 - val_AUC: 0.9392 - val_Precision: 0.9028 - val_Recall: 0.7831 - val_loss: 0.0035
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9731 - Precision: 0.9214 - Recall: 0.7206 - loss: 0.0024 - val_AUC: 0.9392 - val_Precision: 0.9028 - val_Recall: 0.7831 - val_loss: 0.0035
 Epoch 20/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9709 - Precision: 0.8915 - Recall: 0.7313 - loss: 0.0024 - val_AUC: 0.9332 - val_Precision: 0.9014 - val_Recall: 0.7711 - val_loss: 0.0033
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9709 - Precision: 0.8915 - Recall: 0.7313 - loss: 0.0024 - val_AUC: 0.9332 - val_Precision: 0.9014 - val_Recall: 0.7711 - val_loss: 0.0033
 Epoch 21/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9719 - Precision: 0.8986 - Recall: 0.7578 - loss: 0.0023 - val_AUC: 0.9332 - val_Precision: 0.9028 - val_Recall: 0.7831 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9719 - Precision: 0.8986 - Recall: 0.7578 - loss: 0.0023 - val_AUC: 0.9332 - val_Precision: 0.9028 - val_Recall: 0.7831 - val_loss: 0.0034
 Epoch 22/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9823 - Precision: 0.9140 - Recall: 0.7698 - loss: 0.0021 - val_AUC: 0.9333 - val_Precision: 0.9155 - val_Recall: 0.7831 - val_loss: 0.0033
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9823 - Precision: 0.9140 - Recall: 0.7698 - loss: 0.0021 - val_AUC: 0.9333 - val_Precision: 0.9155 - val_Recall: 0.7831 - val_loss: 0.0033
 Epoch 23/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9740 - Precision: 0.9286 - Recall: 0.7401 - loss: 0.0021 - val_AUC: 0.9333 - val_Precision: 0.9054 - val_Recall: 0.8072 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9740 - Precision: 0.9286 - Recall: 0.7401 - loss: 0.0021 - val_AUC: 0.9333 - val_Precision: 0.9054 - val_Recall: 0.8072 - val_loss: 0.0034
 Epoch 24/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9703 - Precision: 0.8949 - Recall: 0.7484 - loss: 0.0022 - val_AUC: 0.9334 - val_Precision: 0.8784 - val_Recall: 0.7831 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9703 - Precision: 0.8949 - Recall: 0.7484 - loss: 0.0022 - val_AUC: 0.9334 - val_Precision: 0.8784 - val_Recall: 0.7831 - val_loss: 0.0034
 Epoch 25/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9792 - Precision: 0.8931 - Recall: 0.7496 - loss: 0.0021 - val_AUC: 0.9393 - val_Precision: 0.8571 - val_Recall: 0.7952 - val_loss: 0.0035
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9792 - Precision: 0.8931 - Recall: 0.7496 - loss: 0.0021 - val_AUC: 0.9393 - val_Precision: 0.8571 - val_Recall: 0.7952 - val_loss: 0.0035
 Epoch 26/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9797 - Precision: 0.8963 - Recall: 0.7868 - loss: 0.0020 - val_AUC: 0.9333 - val_Precision: 0.9167 - val_Recall: 0.7952 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9797 - Precision: 0.8963 - Recall: 0.7868 - loss: 0.0020 - val_AUC: 0.9333 - val_Precision: 0.9167 - val_Recall: 0.7952 - val_loss: 0.0034
 Epoch 27/100
-<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9814 - Precision: 0.9105 - Recall: 0.7731 - loss: 0.0020 - val_AUC: 0.9332 - val_Precision: 0.9275 - val_Recall: 0.7711 - val_loss: 0.0034
+<span class="ansi-bold">357/357</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9814 - Precision: 0.9105 - Recall: 0.7731 - loss: 0.0020 - val_AUC: 0.9332 - val_Precision: 0.9275 - val_Recall: 0.7711 - val_loss: 0.0034
 </pre>
 </div>
 </div>
@@ -8378,65 +8378,65 @@ Epoch 27/100
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Epoch 1/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">3s</span> 4ms/step - AUC: 0.9198 - Precision: 0.3836 - Recall: 0.8736 - loss: 0.4646 - val_AUC: 0.9516 - val_Precision: 0.2759 - val_Recall: 0.8101 - val_loss: 0.1270
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">3s</span> 3ms/step - AUC: 0.9198 - Precision: 0.3836 - Recall: 0.8736 - loss: 0.4646 - val_AUC: 0.9516 - val_Precision: 0.2759 - val_Recall: 0.8101 - val_loss: 0.1270
 Epoch 2/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9627 - Precision: 0.9487 - Recall: 0.8575 - loss: 0.1349 - val_AUC: 0.9537 - val_Precision: 0.4444 - val_Recall: 0.8101 - val_loss: 0.0475
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9627 - Precision: 0.9487 - Recall: 0.8575 - loss: 0.1349 - val_AUC: 0.9537 - val_Precision: 0.4444 - val_Recall: 0.8101 - val_loss: 0.0475
 Epoch 3/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9775 - Precision: 0.9637 - Recall: 0.8611 - loss: 0.0804 - val_AUC: 0.9609 - val_Precision: 0.4539 - val_Recall: 0.8101 - val_loss: 0.0298
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9775 - Precision: 0.9637 - Recall: 0.8611 - loss: 0.0804 - val_AUC: 0.9609 - val_Precision: 0.4539 - val_Recall: 0.8101 - val_loss: 0.0298
 Epoch 4/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9857 - Precision: 0.9636 - Recall: 0.8684 - loss: 0.0646 - val_AUC: 0.9586 - val_Precision: 0.4676 - val_Recall: 0.8228 - val_loss: 0.0236
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9857 - Precision: 0.9636 - Recall: 0.8684 - loss: 0.0646 - val_AUC: 0.9586 - val_Precision: 0.4676 - val_Recall: 0.8228 - val_loss: 0.0236
 Epoch 5/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9901 - Precision: 0.9672 - Recall: 0.8766 - loss: 0.0563 - val_AUC: 0.9638 - val_Precision: 0.5462 - val_Recall: 0.8228 - val_loss: 0.0194
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9901 - Precision: 0.9672 - Recall: 0.8766 - loss: 0.0563 - val_AUC: 0.9638 - val_Precision: 0.5462 - val_Recall: 0.8228 - val_loss: 0.0194
 Epoch 6/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9933 - Precision: 0.9668 - Recall: 0.8852 - loss: 0.0501 - val_AUC: 0.9570 - val_Precision: 0.5424 - val_Recall: 0.8101 - val_loss: 0.0173
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9933 - Precision: 0.9668 - Recall: 0.8852 - loss: 0.0501 - val_AUC: 0.9570 - val_Precision: 0.5424 - val_Recall: 0.8101 - val_loss: 0.0173
 Epoch 7/100
 <span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9948 - Precision: 0.9647 - Recall: 0.8953 - loss: 0.0455 - val_AUC: 0.9529 - val_Precision: 0.5207 - val_Recall: 0.7975 - val_loss: 0.0161
 Epoch 8/100
 <span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9967 - Precision: 0.9653 - Recall: 0.9111 - loss: 0.0401 - val_AUC: 0.9488 - val_Precision: 0.5727 - val_Recall: 0.7975 - val_loss: 0.0142
 Epoch 9/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9971 - Precision: 0.9656 - Recall: 0.9189 - loss: 0.0366 - val_AUC: 0.9439 - val_Precision: 0.5943 - val_Recall: 0.7975 - val_loss: 0.0132
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9971 - Precision: 0.9656 - Recall: 0.9189 - loss: 0.0366 - val_AUC: 0.9439 - val_Precision: 0.5943 - val_Recall: 0.7975 - val_loss: 0.0132
 Epoch 10/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9980 - Precision: 0.9658 - Recall: 0.9313 - loss: 0.0324 - val_AUC: 0.9329 - val_Precision: 0.6038 - val_Recall: 0.8101 - val_loss: 0.0123
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9980 - Precision: 0.9658 - Recall: 0.9313 - loss: 0.0324 - val_AUC: 0.9329 - val_Precision: 0.6038 - val_Recall: 0.8101 - val_loss: 0.0123
 Epoch 11/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9982 - Precision: 0.9677 - Recall: 0.9393 - loss: 0.0296 - val_AUC: 0.9333 - val_Precision: 0.6392 - val_Recall: 0.7848 - val_loss: 0.0114
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9982 - Precision: 0.9677 - Recall: 0.9393 - loss: 0.0296 - val_AUC: 0.9333 - val_Precision: 0.6392 - val_Recall: 0.7848 - val_loss: 0.0114
 Epoch 12/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9986 - Precision: 0.9685 - Recall: 0.9441 - loss: 0.0279 - val_AUC: 0.9338 - val_Precision: 0.5849 - val_Recall: 0.7848 - val_loss: 0.0118
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9986 - Precision: 0.9685 - Recall: 0.9441 - loss: 0.0279 - val_AUC: 0.9338 - val_Precision: 0.5849 - val_Recall: 0.7848 - val_loss: 0.0118
 Epoch 13/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9989 - Precision: 0.9700 - Recall: 0.9539 - loss: 0.0247 - val_AUC: 0.9344 - val_Precision: 0.6596 - val_Recall: 0.7848 - val_loss: 0.0106
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9989 - Precision: 0.9700 - Recall: 0.9539 - loss: 0.0247 - val_AUC: 0.9344 - val_Precision: 0.6596 - val_Recall: 0.7848 - val_loss: 0.0106
 Epoch 14/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9992 - Precision: 0.9711 - Recall: 0.9578 - loss: 0.0230 - val_AUC: 0.9347 - val_Precision: 0.6966 - val_Recall: 0.7848 - val_loss: 0.0098
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9992 - Precision: 0.9711 - Recall: 0.9578 - loss: 0.0230 - val_AUC: 0.9347 - val_Precision: 0.6966 - val_Recall: 0.7848 - val_loss: 0.0098
 Epoch 15/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9991 - Precision: 0.9723 - Recall: 0.9618 - loss: 0.0217 - val_AUC: 0.9348 - val_Precision: 0.6774 - val_Recall: 0.7975 - val_loss: 0.0100
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9991 - Precision: 0.9723 - Recall: 0.9618 - loss: 0.0217 - val_AUC: 0.9348 - val_Precision: 0.6774 - val_Recall: 0.7975 - val_loss: 0.0100
 Epoch 16/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 3ms/step - AUC: 0.9994 - Precision: 0.9731 - Recall: 0.9659 - loss: 0.0199 - val_AUC: 0.9351 - val_Precision: 0.6966 - val_Recall: 0.7848 - val_loss: 0.0093
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9994 - Precision: 0.9731 - Recall: 0.9659 - loss: 0.0199 - val_AUC: 0.9351 - val_Precision: 0.6966 - val_Recall: 0.7848 - val_loss: 0.0093
 Epoch 17/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9995 - Precision: 0.9738 - Recall: 0.9720 - loss: 0.0187 - val_AUC: 0.9353 - val_Precision: 0.7011 - val_Recall: 0.7722 - val_loss: 0.0093
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9995 - Precision: 0.9738 - Recall: 0.9720 - loss: 0.0187 - val_AUC: 0.9353 - val_Precision: 0.7011 - val_Recall: 0.7722 - val_loss: 0.0093
 Epoch 18/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9996 - Precision: 0.9759 - Recall: 0.9741 - loss: 0.0175 - val_AUC: 0.9353 - val_Precision: 0.6596 - val_Recall: 0.7848 - val_loss: 0.0093
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9996 - Precision: 0.9759 - Recall: 0.9741 - loss: 0.0175 - val_AUC: 0.9353 - val_Precision: 0.6596 - val_Recall: 0.7848 - val_loss: 0.0093
 Epoch 19/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9778 - Recall: 0.9775 - loss: 0.0161 - val_AUC: 0.9354 - val_Precision: 0.6739 - val_Recall: 0.7848 - val_loss: 0.0094
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9778 - Recall: 0.9775 - loss: 0.0161 - val_AUC: 0.9354 - val_Precision: 0.6739 - val_Recall: 0.7848 - val_loss: 0.0094
 Epoch 20/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9764 - Recall: 0.9792 - loss: 0.0158 - val_AUC: 0.9292 - val_Precision: 0.6559 - val_Recall: 0.7722 - val_loss: 0.0092
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9764 - Recall: 0.9792 - loss: 0.0158 - val_AUC: 0.9292 - val_Precision: 0.6559 - val_Recall: 0.7722 - val_loss: 0.0092
 Epoch 21/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9796 - Recall: 0.9790 - loss: 0.0152 - val_AUC: 0.9230 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0090
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9796 - Recall: 0.9790 - loss: 0.0152 - val_AUC: 0.9230 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0090
 Epoch 22/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9782 - Recall: 0.9816 - loss: 0.0150 - val_AUC: 0.9294 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0093
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9782 - Recall: 0.9816 - loss: 0.0150 - val_AUC: 0.9294 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0093
 Epoch 23/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 4ms/step - AUC: 0.9997 - Precision: 0.9799 - Recall: 0.9825 - loss: 0.0140 - val_AUC: 0.9231 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0091
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9799 - Recall: 0.9825 - loss: 0.0140 - val_AUC: 0.9231 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0091
 Epoch 24/100
 <span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9814 - Recall: 0.9845 - loss: 0.0131 - val_AUC: 0.9169 - val_Precision: 0.7317 - val_Recall: 0.7595 - val_loss: 0.0088
 Epoch 25/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9803 - Recall: 0.9834 - loss: 0.0132 - val_AUC: 0.9106 - val_Precision: 0.7229 - val_Recall: 0.7595 - val_loss: 0.0091
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9803 - Recall: 0.9834 - loss: 0.0132 - val_AUC: 0.9106 - val_Precision: 0.7229 - val_Recall: 0.7595 - val_loss: 0.0091
 Epoch 26/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9807 - Recall: 0.9850 - loss: 0.0127 - val_AUC: 0.9169 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0091
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9807 - Recall: 0.9850 - loss: 0.0127 - val_AUC: 0.9169 - val_Precision: 0.7143 - val_Recall: 0.7595 - val_loss: 0.0091
 Epoch 27/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9814 - Recall: 0.9852 - loss: 0.0126 - val_AUC: 0.9170 - val_Precision: 0.7595 - val_Recall: 0.7595 - val_loss: 0.0087
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9814 - Recall: 0.9852 - loss: 0.0126 - val_AUC: 0.9170 - val_Precision: 0.7595 - val_Recall: 0.7595 - val_loss: 0.0087
 Epoch 28/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9808 - Recall: 0.9867 - loss: 0.0121 - val_AUC: 0.9170 - val_Precision: 0.7595 - val_Recall: 0.7595 - val_loss: 0.0088
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9808 - Recall: 0.9867 - loss: 0.0121 - val_AUC: 0.9170 - val_Precision: 0.7595 - val_Recall: 0.7595 - val_loss: 0.0088
 Epoch 29/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9808 - Recall: 0.9869 - loss: 0.0119 - val_AUC: 0.9170 - val_Precision: 0.7229 - val_Recall: 0.7595 - val_loss: 0.0088
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9808 - Recall: 0.9869 - loss: 0.0119 - val_AUC: 0.9170 - val_Precision: 0.7229 - val_Recall: 0.7595 - val_loss: 0.0088
 Epoch 30/100
-<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 3ms/step - AUC: 0.9997 - Precision: 0.9809 - Recall: 0.9872 - loss: 0.0112 - val_AUC: 0.9170 - val_Precision: 0.7407 - val_Recall: 0.7595 - val_loss: 0.0090
+<span class="ansi-bold">391/391</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 2ms/step - AUC: 0.9997 - Precision: 0.9809 - Recall: 0.9872 - loss: 0.0112 - val_AUC: 0.9170 - val_Precision: 0.7407 - val_Recall: 0.7595 - val_loss: 0.0090
 </pre>
 </div>
 </div>
@@ -8581,7 +8581,7 @@ Epoch 30/100
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 1ms/step
+<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 569us/step
 
 Test Set Results of MLP:
 ROC AUC: 0.9768
@@ -8600,7 +8600,7 @@ Classification Report:
    macro avg       0.96      0.87      0.91     56962
 weighted avg       1.00      1.00      1.00     56962
 
-<span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 868us/step
+<span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 675us/step
 
 Test Set Results of MLP with SMOTE:
 ROC AUC: 0.9617
@@ -8688,7 +8688,7 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 958us/step
+<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 640us/step
 </pre>
 </div>
 </div>
@@ -8747,7 +8747,7 @@ weighted avg       1.00      1.00      1.00     56962
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">2s</span> 1ms/step
+<pre><span class="ansi-bold">1781/1781</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 612us/step
 </pre>
 </div>
 </div>
@@ -9151,7 +9151,7 @@ weighted avg       1.00      1.00      1.00     56962
 <th>SLA (FN-penalty)</th>
 <th>Candidate</th>
 <th style="text-align:right">Best Threshold</th>
-<th style="text-align:right">Test Profit ($ / 56 k tx)</th>
+<th style="text-align:right">Test Profit ($ / 56k transactions)</th>
 <th>Why it wins</th>
 </tr>
 </thead>
