@@ -1,27 +1,18 @@
 # Import Libraries
 import time
-import mlflow
 import joblib
 import pickle
 import numpy as np
 import streamlit as st
-from pathlib import Path
 import matplotlib.pyplot as plt
 from lime.lime_tabular import LimeTabularExplainer
 from sklearn.metrics import ConfusionMatrixDisplay
 
 
 @st.cache_resource(show_spinner="Loading model and data...")
-# Load Model from MLflow
+# Load model
 def load_artifacts():
-    # MLflow production model
-    mlruns_uri = Path("../mlruns").resolve().as_uri()
-    mlflow.set_tracking_uri(mlruns_uri)
-    model_name = "Final XGB + SMOTE Tuned Model"
-    prod_v = mlflow.MlflowClient().get_latest_versions(
-        model_name, stages=["Production"])[0].version
-    model = mlflow.sklearn.load_model(f"models:/{model_name}/{prod_v}")
-
+    model = joblib.load("../models/Final XGB + SMOTE Tuned Model.pkl")
     # Data
     X_train, X_test, y_train, y_test = joblib.load(
         "../data/processed/split_data.pkl")
