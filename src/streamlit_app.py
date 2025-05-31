@@ -21,10 +21,10 @@ def load_artifacts():
     with open("../data/processed/profit_cache.pkl", "rb") as f:
         cache = pickle.load(f)
 
-    return model, X_test, y_test, cache, prod_v
+    return model, X_test, y_test, cache
 
 
-model, X_test, y_test, cache, prod_v = load_artifacts()
+model, X_test, y_test, cache = load_artifacts()
 pen_grid = np.array(cache["pen_grid"])
 
 # Main container CSS
@@ -548,8 +548,8 @@ with st.expander("Model Card - XGBoost + SMOTE", expanded=True):
         </td></tr>
 
         <tr><th>Deployment</th><td>
-        Model version <strong>v{prod_v}</strong> registered in
-        MLflow (Production) and served through this Streamlit app.
+        Model version <strong>1</strong> registered in
+        MLflow (Production) as well as pickle file.
         </td></tr>
 
         <tr><th>Potential&nbsp;Improvements</th><td>
