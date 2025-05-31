@@ -523,8 +523,8 @@ with st.expander("Model Card - XGBoost + SMOTE", expanded=True):
         </td></tr>
 
         <tr><th>Metric</th><td>
-        <code>Profit = TP x (fee % x $fraud) - FP x $cost - FN x
-        (penalty % x $fraud)</code>
+        <code>Profit = TP x (fee % x $fraud) - FP x $cost<br>
+        - FN x (penalty % x $fraud)</code>
         </td></tr>
 
         <tr><th>Performance&nbsp;(test)</th><td>
