@@ -12,13 +12,13 @@ from sklearn.metrics import ConfusionMatrixDisplay
 @st.cache_resource(show_spinner="Loading model and data...")
 # Load model
 def load_artifacts():
-    model = joblib.load("../models/Final XGB + SMOTE Tuned Model.pkl")
+    model = joblib.load("models/Final XGB + SMOTE Tuned Model.pkl")
     # Data
     X_train, X_test, y_train, y_test = joblib.load(
-        "../data/processed/split_data.pkl")
+        "data/processed/split_data.pkl")
 
     # Cache
-    with open("../data/processed/profit_cache.pkl", "rb") as f:
+    with open("data/processed/profit_cache.pkl", "rb") as f:
         cache = pickle.load(f)
 
     return model, X_test, y_test, cache
