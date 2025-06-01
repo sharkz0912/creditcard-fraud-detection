@@ -469,6 +469,14 @@ with st.expander("Run live inference & explain model reasoning",
 # Model Card
 st.markdown("---")
 st.subheader("Model Details")
+metric_formula = (
+    "<tr><th>Metric</th><td>"
+    "<code>"
+    "Profit = TP x (fee % x $fraud) - FP x $cost - "
+    "FN x (penalty % x $fraud)"
+    "</code>"
+    "</td></tr>"
+    )
 with st.expander("Model Card - XGBoost + SMOTE", expanded=True):
     st.markdown(
         f"""
@@ -522,10 +530,7 @@ with st.expander("Model Card - XGBoost + SMOTE", expanded=True):
         All amounts in <strong>USD</strong>. Customer-churn cost not included.
         </td></tr>
 
-        <tr><th>Metric</th><td>
-        <code>Profit = TP x (fee % x $fraud) - FP x $cost - FN\
-            x (penalty % x $fraud)</code>
-        </td></tr>
+        {metric_formula}
 
         <tr><th>Performance&nbsp;(test)</th><td>
         PR-AUC ≈ 0.88 &nbsp;|&nbsp; ROC-AUC ≈ 0.97.
