@@ -113,10 +113,12 @@ st.markdown("""
 st.sidebar.header("Business Scenario")
 st.sidebar.markdown(
     (
-        "Simulating the **annual profits of a fraud detection company** "
+        "Simulating the **annual profits of a fraud blocker company** "
         "using the **XGBoost + SMOTE** machine learning model.\n\n"
         "- Money earned for **successfully catching fraud**.\n"
-        "- Money lost for **missing fraud** (the bank eats the loss).\n"
+        "- Money lost for **missing fraud** "
+        "(some loss taken by fraud blocker company and rest by "
+        "credit card company).\n"
         "- Money lost for **wrongly blocking legit customer transactions**\n"
         "  (review cost).\n\n"
         "Adjust the sliders to explore profit generated "
