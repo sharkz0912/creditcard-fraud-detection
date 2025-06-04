@@ -117,8 +117,7 @@ st.sidebar.markdown(
         "using the **XGBoost + SMOTE** machine learning model.\n\n"
         "- Money earned for **successfully catching fraud**.\n"
         "- Money lost for **missing fraud** "
-        "(some loss taken by fraud blocker company and rest by "
-        "credit card company).\n"
+        "(loss absorbed by fraud blocker company or credit card company).\n"
         "- Money lost for **wrongly blocking legit customer transactions**\n"
         "  (review cost).\n\n"
         "Adjust the sliders to explore profit generated "
@@ -135,12 +134,13 @@ avg_fraud = st.sidebar.slider(
 )
 tp_fee_pct = st.sidebar.slider(
     "Reward for catching fraud (% of fraud amount)", 5, 15, 10, step=5,
-    help="Success-fee your bank collects when you block a fraud"
+    help="Success-fee your bank collects when a fraud transaction is blocked"
 ) / 100
 fp_cost = st.sidebar.slider(
     "Cost of wrongly blocking a customer transaction ($)",
     2.00, 5.00, 3.00, step=1.00,
-    help="Customer service / UX cost when you wrongly flag a legit purchase"
+    help=("Customer service / UX cost when a transaction is wrongly "
+          "flagged as fraud")
 )
 fn_penalty_pct = st.sidebar.slider(
     "Penalty for missing fraud (% of fraud amount)", 0, 50, 25, step=25,
