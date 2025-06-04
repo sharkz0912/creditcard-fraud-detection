@@ -1,6 +1,6 @@
 #  Machine Learning Based Credit‑Card Fraud Detection
 
-> **Goal** Use a raw, **highly-imbalanced** credit-card dataset to build an **explainable, cost-sensitive ML model** that *directly* optimizes **profit** and lets stakeholders explore trade-offs in real time.  
+> **Goal:** Use a raw, **highly-imbalanced** credit-card dataset to build an **explainable, cost-sensitive ML model** that *directly* optimizes **profit** and lets stakeholders explore trade-offs in real time.  
 >
 > **Business Scenario:** A third-party fraud-detection company partners with multiple European card-issuing banks.  
 > • It earns a **success fee** (e.g. 10 % of the fraud amount) for every fraudulent transaction it blocks.  
