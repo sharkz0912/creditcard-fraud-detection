@@ -1,14 +1,15 @@
 #  Machine Learning Based Credit‑Card Fraud Detection
 
-> **Goal**: Use a raw, **highly‑imbalanced** credit‑card dataset to create an **explainable, cost‑sensitive machine learning model** capableof detecting fraud transactions that *directly* optimises **profit** and lets stakeholders explore trade‑offs in real time.
+> **Goal** Use a raw, **highly-imbalanced** credit-card dataset to build an **explainable, cost-sensitive ML model** that *directly* optimizes **profit** and lets stakeholders explore trade-offs in real time.  
+>
+> **Business Scenario:** A third-party fraud-detection company partners with multiple European card-issuing banks.  
+> • It earns a **success fee** (e.g. 10 % of the fraud amount) for every fraudulent transaction it blocks.  
+> • If it **misses fraud** (FN), the bank and vendor share the loss.  
+> • If it **wrongly blocks** a legitimate purchase (FP), the vendor pays the **review / customer-service cost** (≈ $3).  
+>  
+> The model must therefore **maximize net profit**—not just accuracy—under realistic business incentives.  
+> An interactive dashboard **simulates these financial trade-offs** across ~ 83 billion yearly EU card transactions.
 
-> **Business Scenario**: A third-party fraud-detection company partners with multiple European card-issuing banks. For every fraudulent transaction it successfully blocks, it receives a **success fee** (e.g., 10% of the fraud amount). 
-> 
-> However, if the model **misses a fraud**, the credit card company and fraud detection company share the **fraud loss**. On the other hand, if the model wrongly blocks a legitimate transaction (**false positive**), the company bears the **review or customer service cost** (e.g., $3 per incident).  
->  
-> The model must not only classify correctly — it must **maximize net profit** for the company under these **simulated real-world incentives**.  
->  
-> This project **simulates these financial trade-offs** across the **83 billion annual EU card transactions** using an **interactive dashboard** where stakeholders can adjust penalties and see the **bottom-line impact** instantly.
 ---
 
 ## 0 Project Workflow Outline
@@ -18,7 +19,7 @@ graph TD
     A[Raw CSV] --> B[EDA]
     B --> C[Feature Engineering]
     C --> D[Train ML Models]
-    D --> E[Hyperameter Tune: Optuna]
+    D --> E[Hyperparameter Tuning]
     E --> F[Best Model: XGB + SMOTE]
     F --> G[Optimal Threshold Search]
     G --> H[Explain Model: ]
@@ -37,7 +38,7 @@ graph TD
 | **Model Selection**                 | `notebooks/Modeling.ipynb`                         | XGBoost chosen for highest Recall with least Precesion tradeoff, PR-AUC & speed; outperformed Random Forest and MLP baselines |
 | **Handling Imbalance**              | `notebooks/Hyperparameter_Tuning_XGB_SMOTE.ipynb`  | Applied SMOTE to training folds; improved recall and PR-AUC with minimal precision loss |
 | **Hyperparameter Tuning**           | `notebooks/Hyperparameter_Tuning_XGB.ipynb`        | Used Optuna (10 trials); tuned `n_estimators`, `max_depth`, `learning_rate`, `scale_pos_weight`, along with other less impactful parameters |
-| **Threshold Tuning**                | `notebooks/Threshold_Tuning.ipynb`                 | Usually a probability of 0.5 is considered a cutoff for a classificatio model where anything above **0.5** is labeled fraud. Tested thresholds τ from 0 to 1 to find the one that **maximizes business profit** based on fraud detection rewards and penalties. This tuning increased profit by **\$39 per 56k transactions** compared to using 0.5. |
+| **Threshold Tuning**                | `notebooks/Threshold_Tuning.ipynb`                 | Usually a probability of 0.5 is considered a decision for a classification model where anything above **0.5** is labeled fraud. Tested thresholds τ from 0 to 1 to find the one that **maximizes business profit** based on fraud detection rewards and penalties. This tuning increased profit by **\$39 per 56k transactions** compared to using 0.5. |
 | **Explainability**                  | `notebooks/Model_Explainability.ipynb`             | Used **SHAP** (global + force plots) to globally explain model predictions (i.e most important features)|
 | **Final Outcome**                   | `src/streamlit_app.py`                             | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece|
 | **Experiment Tracking**             | `mlruns/`                                          | All metrics, parameters, models, and artifacts logged with MLflow |
@@ -144,16 +145,13 @@ https://sharkz0912-creditcard-fraud-detection-srcstreamlit-app-akmm5i.streamlit.
 
 ## 8 Future Work
 
-- Explore **deep learning** models (e.g. MLP, R-GANs) for capturing subtle fraud patterns over time.
-- Add a **pytest suite** for validating the profit function and pipeline integrity.
-- Package with a **Dockerfile** for clean local + cloud deployment.
-- Re-trian model with **real-time & current datasets to explore concept drift.
-- Automate periodic **threshold re-tuning** to handle evolving cost structures.
-- Build a **concept-drift detection pipeline** to monitor real-world degradation.
-- Integrate a **feedback loop** from reviewers to improve model trust and decision quality.
-- Support **multi-region/currency-aware cost matrices** to match financial institutions across borders.
-- Prototype **real-time inference** via **Kafka** for streaming fraud detection.
-- Refactor pipeline into **modular, production-grade scripts** (beyond notebooks).
+- Investigate deep-learning approaches (MLP, R-GAN) for subtle pattern capture.
+- Add pytest coverage for profit function and data pipeline.
+- Package with a Dockerfile + CI for reproducible deploys.
+- Retrain on current data & add drift monitoring.
+- Automate periodic threshold re-tuning as costs change.
+- Prototype Kafka real-time inference & feedback loop for analyst overrides.
+- Support multi-currency cost matrices for cross-border banks.
 
 ---
 
