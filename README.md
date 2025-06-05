@@ -1,6 +1,6 @@
 # Machine Learning Based Credit‑Card Fraud Detection
 
-> **Goal:** Use a raw, **highly-imbalanced** credit-card dataset to build an **explainable, cost-sensitive ML model** that *directly* optimizes **profit** and lets stakeholders explore trade-offs in real time.
+> **Goal:** Use a raw, **highly-imbalanced** credit-card transactions dataset to build an **explainable, cost-sensitive ML model** that *directly* optimizes **profit** and lets stakeholders explore trade-offs in real time.
 >
 > **Business Scenario:** A third-party fraud-detection company partners with multiple European card-issuing banks.
 > • It earns a **success fee** (e.g. 10 % of the fraud amount) for every fraudulent transaction it blocks.
@@ -37,7 +37,7 @@ I --> J[Streamlit App]
 | **Feature Engineering** | `notebooks/Feature_Engineering.ipynb` | Created `LogAmount` from skewed `Amount`; scaled `Time`; kept `V1-V28` unchanged for interpretability |
 | **Model Selection** | `notebooks/Modeling.ipynb` | XGBoost chosen for highest Recall with least Precesion tradeoff, PR-AUC & speed; outperformed Random Forest and MLP baselines |
 | **Handling Imbalance** | `notebooks/Hyperparameter_Tuning_XGB_SMOTE.ipynb` | Applied SMOTE to training folds; improved recall and PR-AUC with minimal precision loss |
-| **Hyperparameter Tuning** | `notebooks/Hyperparameter_Tuning_XGB.ipynb` | Used Optuna (10 trials); tuned `n_estimators`, `max_depth`, `learning_rate`, `scale_pos_weight`, along with other less impactful parameters |
+| **Hyperparameter Tuning** | `notebooks/Hyperparameter_Tuning_XGB.ipynb` | Used Optuna (50 trials); tuned `n_estimators`, `max_depth`, `learning_rate`, `scale_pos_weight`, along with other less impactful parameters |
 | **Threshold Tuning** | `notebooks/Threshold_Tuning.ipynb` | Usually a probability of 0.5 is considered a decision for a classification model where anything above **0.5** is labeled fraud. Tested thresholds τ from 0 to 1 to find the one that **maximizes business profit** based on fraud detection rewards and penalties. This tuning increased profit by **\$39 per 56k transactions** compared to using 0.5. |
 | **Explainability** | `notebooks/Model_Explainability.ipynb` | Used **SHAP** (global + force plots) to globally explain model predictions (i.e most important features)|
 | **Final Outcome** | `src/streamlit_app.py` | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece|
