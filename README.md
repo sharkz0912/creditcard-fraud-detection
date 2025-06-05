@@ -40,7 +40,7 @@ I --> J[Streamlit App]
 | **Hyperparameter Tuning** | `notebooks/Hyperparameter_Tuning_XGB.ipynb` | Used Optuna (50 trials); tuned `n_estimators`, `max_depth`, `learning_rate`, `scale_pos_weight`, along with other less impactful parameters |
 | **Threshold Tuning** | `notebooks/Threshold_Tuning.ipynb` | Usually a probability of 0.5 is considered a decision for a classification model where anything above **0.5** is labeled fraud. Tested thresholds τ from 0 to 1 to find the one that **maximizes business profit** based on fraud detection rewards and penalties. This tuning increased profit by **\$39 per 56k transactions** compared to using 0.5. |
 | **Explainability** | `notebooks/Model_Explainability.ipynb` | Used **SHAP** (global + force plots) to globally explain model predictions (i.e most important features)|
-| **Final Outcome** | `src/streamlit_app.py` | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece from streamlit hosted pickle file model & <10ms latency with local MLflow production model|
+| **Final Outcome** | `src/streamlit_app.py` | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece from GitHub hosted pickle file model & <10ms latency with local MLflow production model|
 | **Experiment Tracking** | `mlruns/` | All metrics, parameters, models, and artifacts logged with MLflow |
 
 ---
