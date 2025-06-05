@@ -40,7 +40,7 @@ I --> J[Streamlit App]
 | **Hyperparameter Tuning** | `notebooks/Hyperparameter_Tuning_XGB.ipynb` | Used Optuna (50 trials); tuned `n_estimators`, `max_depth`, `learning_rate`, `scale_pos_weight`, along with other less impactful parameters |
 | **Threshold Tuning** | `notebooks/Threshold_Tuning.ipynb` | Usually a probability of 0.5 is considered a decision for a classification model where anything above **0.5** is labeled fraud. Tested thresholds τ from 0 to 1 to find the one that **maximizes business profit** based on fraud detection rewards and penalties. This tuning increased profit by **\$39 per 56k transactions** compared to using 0.5. |
 | **Explainability** | `notebooks/Model_Explainability.ipynb` | Used **SHAP** (global + force plots) to globally explain model predictions (i.e most important features)|
-| **Final Outcome** | `src/streamlit_app.py` | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece|
+| **Final Outcome** | `src/streamlit_app.py` | Dashboard with slider-adjustable profit assumptions, LIME plots for ; <30ms latency with real time infernece from streamlit hosted pickle file model & <10ms latency with local MLflow production model|
 | **Experiment Tracking** | `mlruns/` | All metrics, parameters, models, and artifacts logged with MLflow |
 
 ---
@@ -56,7 +56,7 @@ I --> J[Streamlit App]
 | **Recall (Sensitivity)** | **0.81** |
 | Profit uplift (τ = optimal vs 0.5) | **+ $39 / 56k transactions** |
 | Optimal threshold (τ) | **0.375** (at 25% FN penalty) |
-| Median inference latency | **4.7 ms** on 1 vCPU |
+| Median inference latency | **30 ms** on 1 vCPU |
 
 The Streamlit dashboard turns these metrics into **annual profit simulations** across ~83 billion EU transactions, allowing stakeholders to adjust assumptions and immediately see financial impact using interactive sliders.
 
@@ -119,8 +119,16 @@ pip install -r requirements.txt
 
 # (Optional) Pre-compute profit cache for faster slider response
 python src/precompute_profit_cache.py
+
+# Open MLflow
+cd notebooks
+python -m mlflow ui --backend-store-uri ../mlruns
+
+# Run local MLflow based Streamlit App
+cd src
+streamlit run streamlit_app_local_mlflow.py
 ```
-# Launch interactive dashboard
+# Launch streamlit hosted interactive dashboard
 https://sharkz0912-creditcard-fraud-detection-srcstreamlit-app-akmm5i.streamlit.app/
 
 ---
@@ -135,6 +143,7 @@ https://sharkz0912-creditcard-fraud-detection-srcstreamlit-app-akmm5i.streamlit.
 ├── notebooks/ # EDA, feature engineering, modeling, etc.
 ├── src/ # Streamlit app + supporting scripts
 │ ├── precompute_profit_cache.py
+| |── streamlit_app_local_mlflow.py
 │ └── streamlit_app.py
 ├── requirements.txt # Project dependencies
 └── README.md # This file
@@ -147,7 +156,7 @@ https://sharkz0912-creditcard-fraud-detection-srcstreamlit-app-akmm5i.streamlit.
 - Investigate deep-learning approaches (MLP, R-GAN) for subtle pattern capture.
 - Add pytest coverage for profit function and data pipeline.
 - Package with a Dockerfile + CI for reproducible deploys.
-- Retrain on current data & add drift monitoring.
+- Retrain on latest/live data & add drift monitoring.
 - Automate periodic threshold re-tuning as costs change.
 - Prototype Kafka real-time inference & feedback loop for analyst overrides.
 - Support multi-currency cost matrices for cross-border banks.
@@ -163,5 +172,5 @@ Github: [https://github.com/sharkz0912](https://github.com/sharkz0912)
 LinkedIn: [linkedin.com/in/srikar-rairao](https://linkedin.com/in/srikar-rairao)
 
 **Dataset:**
-All experiments are based on the [Kaggle Credit Card Fraud Detection dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), which contains anonymized European transactions from 2013 and a fraud rate of just **0.172%**.
+All experiments are based on the [Kaggle Credit Card Fraud Detection dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), which contains anonymized European transactions from 2013 and a fraud rate of just 0.172%.
 License: **CC BY-NC 4.0**
