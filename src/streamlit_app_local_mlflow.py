@@ -12,6 +12,9 @@ from mlflow.tracking import MlflowClient
 from lime.lime_tabular import LimeTabularExplainer
 from sklearn.metrics import ConfusionMatrixDisplay
 
+st.set_page_config(page_title="Credit Card Fraud Detector",
+                   layout="wide", initial_sidebar_state="expanded")
+
 
 @st.cache_resource(show_spinner="Loading model and data...")
 # Load model
